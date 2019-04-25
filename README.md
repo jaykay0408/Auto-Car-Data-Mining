@@ -195,9 +195,9 @@ dmcar-student consist of the following files and directory:
         - back wheels control
         ```
         fw.ready()
-        fw.turn\_left()
-        fw.turn\_right()
-        fw.turn\_straight()
+        fw.turn_left()
+        fw.turn_right()
+        fw.turn_straight()
         fw.turn(ANGLE)
         ```
     5. SPEED
@@ -228,12 +228,12 @@ using VNC viewer.
     MODEL\_PATH at dmcar.py
 ```
 # define the paths to the Stop/Non-Stop Keras deep learning model
-MODEL\_PATH = \"stop\_not\_stop.model\"
+MODEL_PATH = "stop_not_stop.model"
 ```
 -   If you don't have a trained model, you can use a default model
     "stop\_not\_stop.model" by downloading from class GitHub
 ```
-    $ wget https://github.com/jaykay0408/Auto-Car-Data-Mining/raw/master/stop\_not\_stop.model
+    $ wget https://github.com/jaykay0408/Auto-Car-Data-Mining/raw/master/stop_not_stop.model
 ```
 
 ***Homework: Submit the followings:***
