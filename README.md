@@ -76,7 +76,7 @@ Note that if an instructor provides pre-configured SD Card, move to Step
 **Step 2**: Create SD card for Raspberry Pi using downloaded image
 -   Write a downloaded image into SD card using proper software
     -   See the following link for more details:
-> <https://www.raspberrypi.org/documentation/installation/installing-images/README.md>
+        <https://www.raspberrypi.org/documentation/installation/installing-images/README.md>
 -   Add the following two files to connect wi-fi (skip this if you use
     Option 1 in Step3)
     -   ssh: no contents inside
