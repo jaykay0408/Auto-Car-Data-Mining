@@ -1,4 +1,4 @@
-# Autonomous Car using Data Mining Technique: Deep Learning
+# Autonomous Car using Data Mining: Deep Learning
 Autonomous Car project in CPSC552 Data Mining at University of Bridgeport
 
 **Objectives**:
