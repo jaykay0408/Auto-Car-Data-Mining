@@ -155,9 +155,9 @@ dmcar-student consist of the following files and directory:
 -   dmcar.py
     1.  main file to control autonomous car
     2.  To run the program
-    
+    ```
     $ python dmcar.py -b 5
-    
+    ```
     3.  You need to handle mainly this file to operate DM-Car
 -   lane\_detection.py
     1.  functions to detect lanes and PID control
@@ -173,18 +173,22 @@ dmcar-student consist of the following files and directory:
     2. db\_file: calibration data for each servo
     3. fw = front\_wheels.Front\_Wheels(debug=False, db=db\_file)
         - front wheels contral
+        ```
         bw.ready()
         bw.speed = 50
         bw.forward()
         bw.backward()
         bw.stop()
+        ```
     4. bw = back\_wheels.Back\_Wheels(debug=False, db=db\_file)
         - back wheels control
+        ```
         fw.ready()
         fw.turn\_left()
         fw.turn\_right()
         fw.turn\_straight()
         fw.turn(ANGLE)
+        ```
     5. SPEED
         - Speed of DM-Car: range from 0 to 100
         - For testing purpose: 25 \~ 50 
