@@ -211,222 +211,134 @@ Lab: Section 5.
 
 Transfer the trained model from your PC into Raspberry Pi in your car
 using VNC viewer.
-
 -   Start VNC viewer file transfer
-
 -   Copy the file into /home/pi/dmcar-student
-
 -   If model name is different from "stop\_not\_stop.model", change
     MODEL\_PATH at dmcar.py
-
-\# define the paths to the Stop/Non-Stop Keras deep learning model
-
+```
+# define the paths to the Stop/Non-Stop Keras deep learning model
 MODEL\_PATH = \"stop\_not\_stop.model\"
-
+```
 -   If you don't have a trained model, you can use a default model
     "stop\_not\_stop.model" by downloading from class GitHub
-
-> \$ wget
-> https://github.com/jaykay0408/Auto-Car-Data-Mining/raw/master/stop\_not\_stop.model
+```
+    $ wget https://github.com/jaykay0408/Auto-Car-Data-Mining/raw/master/stop\_not\_stop.model
+```
 
 ***Homework: Submit the followings:***
-
 -   Uploading collected dataset into proper storage, such as Google
     drive or any available shareable storage
-
 -   Then, share the link of uploaded dataset
-
 -   Submit python code to train the models
-
 -   Uploading trained model(s) to Github
-
 -   Answer the following questions:
-
-    16. Image Size
-
-    17. How to design CNN architecture including how many layers, what
+    1. Image Size
+    2. How to design CNN architecture including how many layers, what
         kind of layers, and so on
-
-    18. How to optimize the model including parameter values, drop out,
+    3. How to optimize the model including parameter values, drop out,
         backpropagation, learning rate, \# of epoch and so on
+    4. Evaluations
+    5. How to overcome the limitations in your DM-Car implementation
 
-    19. Evaluations
-
-    20. How to overcome the limitations in your DM-Car implementation
-
-**\
-**
-
-**Phase 5: Testing Autonomous Vehicle with Pre-Trained Model**
+## Phase 5: Testing Autonomous Vehicle with Pre-Trained Model
 
 In Phase 5 (for the last step), picar will be tested using pre-trained
 model in Phase 4 for the following task.
 
-![](media/image9.tiff){width="1.0944542869641294in"
-height="1.1967749343832021in"}![](media/image10.tiff){width="0.2551213910761155in"
-height="0.5590813648293963in"}![](media/image11.tiff){width="0.2551213910761155in"
-height="0.5590813648293963in"}![](media/image12.tiff){width="0.28296916010498685in"
-height="0.5653554243219597in"}![](media/image13.tiff){width="0.26510061242344707in"
-height="0.5653554243219597in"}
+![](Images/image7.png)
 
 Specification of Testing road
-
 -   Dimensions:
-
     -   Width: 8 \~ 10 inches (but, 9 inch is suggested)
-
     -   Length: minimum 10 feet (but, only straight lane)
-
     -   Surface: any flat area is fine
-
     -   Color of surface: any color is fine, but not too dark. Also,
         solid and bright color will give the best performance
-
 -   Lane:
-
     -   Color: black
-
     -   Width: ¾ inches
-
     -   All connected and straight lane
-
     -   Use the vinyl electric tape to create lane as shown below image
-
 -   Traffic signs
-
     -   Traffic signs and required action when detected
-
         -   STOP: stop and go
-
         -   YIELD: slow down and go normal speed
-
         -   Low SPEED: change speed to low
-
         -   High SPEED: change speed to high
-
         -   Traffic Signal: detect traffic signal (no change on picar)
-
         -   RR (Rail Road): stop and go
-
     -   Dimensions
-
         -   Total Hight: 3 \~ 5 inches
-
         -   Sign: 1 x 1 inches
-
         -   Setup right-hand side of the road
-
         -   At least 2 feet between 2 signs
-
     -   Sample Signs
 
-![](media/image10.tiff){width="6.4875in" height="2.282638888888889in"}
+![](Images/image8.jpg)
 
 Your picar should follow the tasks below:
 
 1.  Start
-
 2.  Drive between two lanes
-
 3.  Detect traffic signs
-
 4.  Perform a task for each sign
-
     -   STOP: stop and go
-
     -   YIELD: slow down and go normal speed
-
     -   Low SPEED: change speed to low
-
     -   High SPEED: change speed to high
-
     -   Traffic Signal: detect traffic signal (no change on picar)
-
     -   RR (Rail Road): stop and go
-
 5.  Stop at the end of road
 
 ***Homework: Submit the followings***
-
 -   Target traffic signs and their tasks (in addition to defaults)
-
 -   Collected datasets
-
 -   Proposed deep learning models
-
 -   Implementation of the proposed model (i.e., source code)
-
 -   Evaluations
-
 -   Submission
-
     -   Documenting the following at GitHub, then submit the Github link
         to Canvas
-
         -   Proposed deep learning model
-
         -   Regarding dataset
-
         -   Implementation including source code, trained model and any
             others
-
         -   Evaluations
-
     -   Upload dataset into any shareable storage such as google drive
         or Dropbox, then submit the link to Canvas
-
     -   Submit screenshots and short clips that shows your
         implementation and progress to Canvas
 
-**\
-**
-
-**Phase 6: Final Competition**
-
+## Phase 6: Final Competition
 The final phase of this project is a competition with other teams.
-
 -   When: May 6 \~ May 10 during the final exam week
-
 -   Where: Hallway in Technology Building
-
 -   Rule:
-
     1.  Each team has 2 trials
-
     2.  A team who gets the highest point is a winner
-
     3.  Points
-
         -   Correct detection for each sign: + 20 points
-
         -   Perform task for each sign: + 20 points
-
         -   Successful stop at the end: + 20 points
-
         -   Out of lane: - 5 points
-
         -   Unexpected stop or go: - 5 points
-
         -   Manual operation: - 20 points
-
         -   Touching a picar: - 40 points
 
 ***Homework: Submit the followings:***
-
 -   Video tapping the final competition
-
 -   Edit 2 \~ 3 minutes video
-
 -   Upload the video into YouTube
-
 -   Submit the link
 
-**Phase 7: Final Writing-Up**
-
+## Phase 7: Final Writing-Up
 You must use Github for your documentation
+-   Due: Before the final competition day
+-   Also, submit 5 minutes final video or Youtube link
+-   Submission: Github link to Canvas
 
--   **Due: Before the final competition day**
-
--   **Also, submit 5 minutes final video or Youtube link**
-
--   **Submission: Github link to Canvas**
+**Group 1**: https://github.com/DivyaSamragniNadakuditi/DM-Car
+**Group 2**: https://github.com/ub-data-miners-2/traffic-sign-net
+**Group 3**: https://github.com/uteegull/DM_Car
+**Group 4**: https://github.com/DOWmad/PiCar_Project
+**Group 5**: https://github.com/gunasai/DM-Car-Team5
