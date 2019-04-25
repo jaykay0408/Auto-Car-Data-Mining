@@ -338,7 +338,11 @@ You must use Github for your documentation
 -   Submission: Github link to Canvas
 
 **Group 1**: https://github.com/DivyaSamragniNadakuditi/DM-Car
+
 **Group 2**: https://github.com/ub-data-miners-2/traffic-sign-net
+
 **Group 3**: https://github.com/uteegull/DM_Car
+
 **Group 4**: https://github.com/DOWmad/PiCar_Project
+
 **Group 5**: https://github.com/gunasai/DM-Car-Team5
