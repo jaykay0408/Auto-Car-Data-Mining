@@ -43,7 +43,7 @@ correctly.
 -   Any ideas to improve the quality of dmcar?
 -   Submission: Canvas
 
-## Phase 2: Setting-Up Raspberry Pi**
+## Phase 2: Setting-Up Raspberry Pi
 
 DM-Car has 3 PCB as below:
 -   Robot HATS: Connecting Raspberry Pi into controllers
@@ -149,13 +149,15 @@ Start virtualenv (name 'picar3')
     $ dmcar-student
 
 dmcar-student consist of the following files and directory:
+
 ![](Images/image6.jpg)
+
 -   dmcar.py
     1.  main file to control autonomous car
     2.  To run the program
     
-        $ python dmcar.py -b 5
-        
+    $ python dmcar.py -b 5
+    
     3.  You need to handle mainly this file to operate DM-Car
 -   lane\_detection.py
     1.  functions to detect lanes and PID control
@@ -170,14 +172,14 @@ dmcar-student consist of the following files and directory:
     1.  test programs for controlling servos
     2. db\_file: calibration data for each servo
     3. fw = front\_wheels.Front\_Wheels(debug=False, db=db\_file)
-        \- front wheels contral
+        - front wheels contral
         bw.ready()
         bw.speed = 50
         bw.forward()
         bw.backward()
         bw.stop()
     4. bw = back\_wheels.Back\_Wheels(debug=False, db=db\_file)
-        \- back wheels control
+        - back wheels control
         fw.ready()
         fw.turn\_left()
         fw.turn\_right()
