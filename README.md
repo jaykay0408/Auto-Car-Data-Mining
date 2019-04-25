@@ -15,7 +15,8 @@ follow the instruction to conduct the project.
 ### Porject Groups in Spring 2019
 **Group 1**: https://github.com/DivyaSamragniNadakuditi/DM-Car
 
-**Group 2**: https://github.com/ub-data-miners-2/traffic-sign-net
+**Group 2**: https://github.com/ub-data-miners-2/dmcar
+             https://github.com/ub-data-miners-2/traffic-sign-net
 
 **Group 3**: https://github.com/uteegull/DM_Car
 
@@ -350,7 +351,8 @@ You must use Github for your documentation
 
 **Group 1**: https://github.com/DivyaSamragniNadakuditi/DM-Car
 
-**Group 2**: https://github.com/ub-data-miners-2/traffic-sign-net
+**Group 2**: https://github.com/ub-data-miners-2/dmcar
+             https://github.com/ub-data-miners-2/traffic-sign-net
 
 **Group 3**: https://github.com/uteegull/DM_Car
 
