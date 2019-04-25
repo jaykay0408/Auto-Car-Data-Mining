@@ -12,6 +12,17 @@ techniques, specifically Convolutional Neural Network (CNN), and to
 apply them to real world problems, i.e., autonomous vehicle. You need to
 follow the instruction to conduct the project.
 
+### Porject Groups in Spring 2019
+**Group 1**: https://github.com/DivyaSamragniNadakuditi/DM-Car
+
+**Group 2**: https://github.com/ub-data-miners-2/traffic-sign-net
+
+**Group 3**: https://github.com/uteegull/DM_Car
+
+**Group 4**: https://github.com/DOWmad/PiCar_Project
+
+**Group 5**: https://github.com/gunasai/DM-Car-Team5
+
 Note: All files that are necessary in this project are available at
 class GitHub site
 <https://github.com/jaykay0408/Auto-Car-Data-Mining>
