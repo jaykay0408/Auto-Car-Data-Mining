@@ -12,6 +12,8 @@ techniques, specifically Convolutional Neural Network (CNN), and to
 apply them to real world problems, i.e., autonomous vehicle. You need to
 follow the instruction to conduct the project.
 
+<video src="Video/video1.mp4" width="320" height="200" controls preload></video>
+
 ### Porject Groups in Spring 2019
 **Group 1**: https://github.com/DivyaSamragniNadakuditi/DM-Car
 
