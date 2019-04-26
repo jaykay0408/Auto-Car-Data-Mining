@@ -12,8 +12,7 @@ techniques, specifically Convolutional Neural Network (CNN), and to
 apply them to real world problems, i.e., autonomous vehicle. You need to
 follow the instruction to conduct the project.
 
-<video src="video/video1.mp4" width="320" height="200" controls preload></video>
-[![Alt text](https://img.youtube.com/vi/gaT_Rf_vKM4/0.jpg)](https://www.youtube.com/watch?v=gaT_Rf_vKM4)
+[![Alt text](https://img.youtube.com/vi/QPpzqjuDxwU.jpg)](https://www.youtube.com/watch?v=QPpzqjuDxwU)
 
 
 ### Porject Groups in Spring 2019
