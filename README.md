@@ -346,6 +346,15 @@ The final phase of this project is a competition with other teams.
 -   Upload the video into YouTube
 -   Submit the link
 
+## Final Competition Results in Spring 2019
+1st Place: Group 4 (total 210 points)
+2nd Place: Group 1 (total 200 points)
+3rd Place: Group 2 and Group 3 (total 170 points)
+5th Place: Group 5 (total 0 point)
+
+Competition Score Board
+![](Images/image9.jpg)
+
 ## Phase 7: Final Writing-Up
 You must use Github for your documentation
 -   Due: Before the final competition day
