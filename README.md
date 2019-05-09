@@ -355,6 +355,22 @@ The final phase of this project is a competition with other teams.
 Competition Score Board
 ![](Images/image9.jpg)
 
+Group 1: 
+[![Alt text](https://img.youtube.com/vi/ARyv3zoPBQg/0.jpg)](https://www.youtube.com/watch?v=ARyv3zoPBQg)
+
+Group 2: 
+[![Alt text](https://img.youtube.com/vi/5WzrkDkSn3I/0.jpg)](https://www.youtube.com/watch?v=5WzrkDkSn3I)
+
+Group 3: 
+[![Alt text](https://img.youtube.com/vi/gJmee2_KKIY/0.jpg)](https://www.youtube.com/watch?v=gJmee2_KKIY)
+
+Group 4: 
+[![Alt text](https://img.youtube.com/vi/dYJP_ok2KKk/0.jpg)](https://www.youtube.com/watch?v=dYJP_ok2KKk)
+
+Group 5: 
+[![Alt text](https://img.youtube.com/vi/Z6RLtIVF4qU/0.jpg)](https://www.youtube.com/watch?v=Z6RLtIVF4qU)
+
+
 ## Phase 7: Final Writing-Up
 You must use Github for your documentation
 -   Due: Before the final competition day
