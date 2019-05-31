@@ -31,6 +31,20 @@ Note: All files that are necessary in this project are available at
 class GitHub site
 <https://github.com/jaykay0408/Auto-Car-Data-Mining>
 
+## Phase 0: Materials for Autonomous Vehicle
+
+|                  Component                 |  Price($) | Quantity |                      URL                      |
+|:-----------------------------------------------|----------:|:--------:|:----------------------------------------------|
+| SunFounder Smart Video Car Kit V2.0        |    115.00 |     1    | https://www.amazon.com/dp/B06XWSVLL8          |
+| ELEMENT Element14 Raspberry Pi 3 B+        |     38.30 |     1    | https://www.amazon.com/dp/B07BDR5PDW          |
+| ABOX 5V 3A Raspberry Pi 3 B+ Power Adapter |      7.99 |     1    | https://www.amazon.com/dp/B07J4XJ8F8/         |
+| SanDisk Ultra 16GB MicroSD Memory Card     |     26.99 |     5    | https://www.amazon.com/dp/B07HXSY8X3/         |
+| HDMI Male to Female Adapter 270 Degree     |      6.55 |     5    | https://www.amazon.com/gp/product/B01MUHJUME/ |
+| Black Electrical Tape                      |     10.00 |     6    | https://www.amazon.com/dp/B0143LD8QY/         |
+| Wooden Stop Sign                           |     12.99 |     1    | https://www.amazon.com/dp/B076FL4HSK/         |
+| 18650 Batteries 6000mah 3.7v With Charger  |      8.64 |     1    | [Ebay link](https://www.ebay.com/p/4pcs-18650-Batteries-6000mah-3-7v-Rechargeable-Li-ion-Battery-With-Charger/23024017467?iid=382745853004)                                          |
+| ***Total Price per Car***                        | ***180 ~ 190*** |     1    |                                               |
+
 ## Phase 1: Assembly an Autonomous Vehicle
 
 As an autonomous vehicle for this project, we are going to use "Smart
