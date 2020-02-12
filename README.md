@@ -73,9 +73,11 @@ correctly.
 - If you are not familiar with Raspberry Pi 4, learn Raspberry Pi first at http://bit.ly/DMCAR2 
 
 ***Homework: Submit the followings:***
+-   Create GitHub project (per team)
 -   At least 10 photos that describe the process of assembly
+-   Photos that shows the connection to Raspberry Pi during the assembly
 -   Any ideas to improve the quality of dmcar?
--   Submission: Canvas
+-   Submission: GitHub, and submit the URL of your GitHub to Canvas
 
 ## Phase 2: Setting-Up Raspberry Pi
 
