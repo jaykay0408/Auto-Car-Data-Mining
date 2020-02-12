@@ -35,17 +35,19 @@ class GitHub site
 
 |                  Component                 |  Price($) | Quantity |                      URL                      |
 |:-----------------------------------------------|----------:|:--------:|:----------------------------------------------|
-| SunFounder Smart Video Car Kit V2.0        |    115.00 |     1    | https://www.amazon.com/dp/B06XWSVLL8          |
-| ELEMENT Element14 Raspberry Pi 3 B+        |     38.30 |     1    | https://www.amazon.com/dp/B07BDR5PDW          |
-| ABOX 5V 3A Raspberry Pi 3 B+ Power Adapter |      7.99 |     1    | https://www.amazon.com/dp/B07J4XJ8F8/         |
-| SanDisk Ultra 16GB MicroSD Memory Card     |     26.99 |     5    | https://www.amazon.com/dp/B07HXSY8X3/         |
-| HDMI Male to Female Adapter 270 Degree     |      6.55 |     5    | https://www.amazon.com/gp/product/B01MUHJUME/ |
-| Black Electrical Tape                      |     10.00 |     6    | https://www.amazon.com/dp/B0143LD8QY/         |
-| Wooden Stop Sign                           |     12.99 |     1    | https://www.amazon.com/dp/B076FL4HSK/         |
-| 18650 Batteries 6000mah 3.7v With Charger  |      8.64 |     1    | [Ebay link](https://www.ebay.com/p/4pcs-18650-Batteries-6000mah-3-7v-Rechargeable-Li-ion-Battery-With-Charger/23024017467?iid=382745853004)                                          |
-| ***Total Price per Car***                        | ***180 ~ 190*** |     1    |                                               |
+| SunFounder Smart Video Car Kit V2.0        |    115.00 |     1    | https://www.amazon.com/dp/B06XWSVLL8              |
+| Raspberry Pi 4 Model B - 1GB RAM .         |     35.00 |     1    | https://vilros.com/products/raspberry-pi-4-model-b|
+| Raspberry Pi 4 Power Supply (USB-C) .      |      9.99 |     1    | https://www.amazon.com/dp/B07TYQRXTK/             |
+| SanDisk Ultra 32GB MicroSD Memory Card     |      7.99 |     1    | https://www.amazon.com/dp/B073JWXGNT/             |
+| micro HDMI male to HDMI female cable .     |      6.99 |     1    | https://www.amazon.com/dp/B00B2HORKE/ .           |
+| Black Electrical Tape                      |     10.00 |     6    | https://www.amazon.com/dp/B0143LD8QY/             |
+| Wooden Stop Sign                           |     12.99 |     1    | https://www.amazon.com/dp/B076FL4HSK/             |
+| 18650 Batteries 6000mah 3.7v With Charger  |      8.64 |     1    | [Ebay link](https://www.ebay.com/p/4pcs-18650-Batteries-6000mah-3-7v-Rechargeable-Li-ion-Battery-With-Charger/23024017467?iid=382745853004)                                              |
+| ***Total Price per Car***                        | ***180 ~ 190*** |     1    |                                                   |
 
 ## Phase 1: Assembly an Autonomous Vehicle
+
+Assembly Instruction at http://bit.ly/DMCAR1
 
 As an autonomous vehicle for this project, we are going to use "Smart
 Video Car Kit V2.0 for Raspberry Pi" as below:
@@ -66,6 +68,9 @@ below.
 Note that pan and tilt servos for a camera will not be used for the
 project. However, you still need to install them to mount a camera
 correctly.
+
+***[Optional] Understanding Raspberry Pi***
+- If you are not familiar with Raspberry Pi 4, learn Raspberry Pi first at http://bit.ly/DMCAR2 
 
 ***Homework: Submit the followings:***
 -   At least 10 photos that describe the process of assembly
@@ -102,6 +107,8 @@ Note that if an instructor provides pre-configured SD Card, move to Step
         Otherwise, you can download 2 files from class Github
 
 **Step 3**: Connect to Raspberry Pi using VNC viewer
+For more information about the connection to Rapsberry Pi, you can refer the following slide at http://bit.ly/DMCAR3 
+
 -   ***Option 1***: directly setup wi-fi using a mice, a keyboard and a
     monitor (HDMI)
     -   Use this option if you have the followings:
@@ -141,6 +148,20 @@ Note that if an instructor provides pre-configured SD Card, move to Step
     -   Sign in to VNC Viewer using the same VNC server account credentials
     -   Then either tap or click to connect to your Raspberry Pi
     ![](Images/image5.jpg)
+
+-   ***Option 4***: Hotspot for Raspberry Pi
+    -   Use this option if you want to use your Raspberry Pi as a hotspot without internet
+    -   Start Terminal
+    -   Run the following commands in a terminal
+        $ wget http://bit.ly/rpihotspot
+        $ tar xvf rpihotspot
+        $ cd rpi-hotspot
+    -   Install Hotspot on your Raspberry Pi
+        $ sudo ./install-hotspot.sh [wifi-name] [channel number]    
+        -   [wifi-name] = SSID network name to connect
+        -   [channel number] = 1 ~ 13, default = 8, but use other number if not connected
+        -   For example, sudo ./install-hotspot.sh dmLee 8
+    -   Reboot.
 
 **Step 4**: Setup networks if needed
 
