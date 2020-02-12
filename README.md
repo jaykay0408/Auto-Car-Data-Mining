@@ -165,7 +165,7 @@ For more information about the connection to Rapsberry Pi, you can refer the fol
        -   [wifi-name] = SSID network name to connect
        -   [channel number] = 1 ~ 13, default = 8, but use other number if not connected
        -   For example, sudo ./install-hotspot.sh dmLee 8
-    -   Reboot.
+-   Reboot.
 
 **Step 4**: Setup networks if needed
 
