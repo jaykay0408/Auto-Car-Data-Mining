@@ -153,17 +153,18 @@ For more information about the connection to Rapsberry Pi, you can refer the fol
     -   Use this option if you want to use your Raspberry Pi as a hotspot without internet
     -   Start Terminal
     -   Run the following commands in a terminal
-
+    ```
     $ wget http://bit.ly/rpihotspot
     $ tar xvf rpihotspot
     $ cd rpi-hotspot
-
+    ```
 -   Install Hotspot on your Raspberry Pi
-
-    $ sudo ./install-hotspot.sh [wifi-name] [channel number]    
-        -   [wifi-name] = SSID network name to connect
-        -   [channel number] = 1 ~ 13, default = 8, but use other number if not connected
-        -   For example, sudo ./install-hotspot.sh dmLee 8
+    ```
+    $ sudo ./install-hotspot.sh [wifi-name] [channel number]  
+    ```
+       -   [wifi-name] = SSID network name to connect
+       -   [channel number] = 1 ~ 13, default = 8, but use other number if not connected
+       -   For example, sudo ./install-hotspot.sh dmLee 8
     -   Reboot.
 
 **Step 4**: Setup networks if needed
