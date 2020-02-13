@@ -15,17 +15,12 @@ follow the instruction to conduct the project.
 [![Alt text](https://img.youtube.com/vi/QPpzqjuDxwU/0.jpg)](https://www.youtube.com/watch?v=QPpzqjuDxwU)
 
 
-### Porject Groups in Spring 2019
-**Group 1**: https://github.com/DivyaSamragniNadakuditi/DM-Car
-
-**Group 2**: https://github.com/ub-data-miners-2/dmcar
-             https://github.com/ub-data-miners-2/traffic-sign-net
-
-**Group 3**: https://github.com/uteegull/DM_Car
-
-**Group 4**: https://github.com/DOWmad/PiCar_Project
-
-**Group 5**: https://github.com/gunasai/DM-Car-Team5
+### Porject Groups in Spring 2020
+**Group 1**:
+**Group 2**: 
+**Group 3**: 
+**Group 4**: 
+**Group 5**: 
 
 Note: All files that are necessary in this project are available at
 class GitHub site
