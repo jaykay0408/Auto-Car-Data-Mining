@@ -66,6 +66,17 @@ Note that pan and tilt servos for a camera will not be used for the
 project. However, you still need to install them to mount a camera
 correctly.
 
+In addition, you need to follow the instruction “Configure the Servo to 90 degree” before you secure 3 servos (pan, tilt and steering). Run “picar servo-install” on your Raspberry Pi until you complete the assembly. 
+
+After the assembly, calibrate the car by following the instruction on a manual and keep the calibration results from the following config file:
+
+    $ cat /home/pi/SunFounder_PiCar-V/remote_control/remote_control/driver/config
+    forward_A = 0
+    forward_B = 0
+    turning_offset = 14
+    pan_offset = -64
+    tilt_offset = 30
+
 ***[Optional] Understanding Raspberry Pi***
 - If you are not familiar with Raspberry Pi 4, learn Raspberry Pi first at http://bit.ly/DMCAR2 
 
@@ -188,6 +199,13 @@ the following functionalities:
 -   Camera module
 -   PID control
 -   Creating Video Clip
+
+Apply calibration values to DM-Car program either editing or copying config file.
+
+    $ cp /home/pi/SunFounder_PiCar-V/remote_control/remote_control/driver/config /home/pi/dmcar-student/picar/config
+OR
+	Edit /home/pi/dmcar-student/picar/config file with the calibration values from Phase 1.
+
 
 Download the autonomous vehicle DM-Car program from Github site. First,
 login Raspberry Pi using VNC viewer (or ssh).
