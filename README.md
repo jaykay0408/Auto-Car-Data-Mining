@@ -40,6 +40,8 @@ class GitHub site
 | 18650 Batteries 6000mah 3.7v With Charger  |      8.64 |     1    | [Ebay link](https://www.ebay.com/p/4pcs-18650-Batteries-6000mah-3-7v-Rechargeable-Li-ion-Battery-With-Charger/23024017467?iid=382745853004)                                              |
 | ***Total Price per Car***                        | ***180 ~ 190*** |     1    |                                                   |
 
+![](Images/picar-kit.jpg)
+
 ## Phase 1: Assembly an Autonomous Vehicle
 
 Assembly Instruction at http://bit.ly/DMCAR1
