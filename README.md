@@ -1,29 +1,21 @@
-# Autonomous Car using Machine Learning and Deep Learning
-Autonomous Car project in CPSC552 Data Mining at University of Bridgeport
+# AtoI Lab : Autonomous Car using Deep Learning and Computer Vision
+Autonomous Car project in AtoI Lab
 
 **Objectives**:
-1.  Understanding Data Mining Techniques and Deep Learning
+1.  Understanding AI with Deep Learning and Computer Vision
 2.  Become familiar with Python, Keras, Tensorflow and OpenCV
-3.  Gain experience with research on autonomous vehicle and data mining
+3.  Gain experience with research on autonomous vehicle and AI
 
-This will be a group project by three (3) students for one semester. The
-main purpose of this project is to become familiar with data mining
+This will be a group project by two or three (2-3) students. The
+main purpose of this project is to become familiar with AI
 techniques, specifically Convolutional Neural Network (CNN), and to
 apply them to real world problems, i.e., autonomous vehicle. You need to
 follow the instruction to conduct the project.
 
 [![Alt text](https://img.youtube.com/vi/QPpzqjuDxwU/0.jpg)](https://www.youtube.com/watch?v=QPpzqjuDxwU)
 
-
-### Porject Groups in Spring 2020
-**Group 1**:
-**Group 2**: 
-**Group 3**: 
-**Group 4**: 
-**Group 5**: 
-
 Note: All files that are necessary in this project are available at
-class GitHub site
+project GitHub site
 <https://github.com/jaykay0408/Auto-Car-Data-Mining>
 
 ## Phase 0: Materials for Autonomous Vehicle
@@ -46,7 +38,7 @@ class GitHub site
 
 Assembly Instruction at http://bit.ly/DMCAR1
 
-As an autonomous vehicle for this project, we are going to use "Smart
+As an autonomous vehicle for this lab, we are going to use "Smart
 Video Car Kit V2.0 for Raspberry Pi" as below:
 -   Model: Sunfounder Smart Video Car Kit V2.0 for Raspberry Pi
 -   Name in this project: DM-Car
@@ -64,7 +56,7 @@ below.
 ![](Images/image2.jpg)
 Note that pan and tilt servos for a camera will not be used for the
 project. However, you still need to install them to mount a camera
-correctly.
+correctly. In case a new USB camera (wide-angle) is used, you can mount a USB camera on pan and tilt part.
 
 In addition, you need to follow the instruction “Configure the Servo to 90 degree” before you secure 3 servos (pan, tilt and steering). Run “picar servo-install” on your Raspberry Pi until you complete the assembly. 
 
@@ -85,7 +77,7 @@ After the assembly, calibrate the car by following the instruction on a manual a
 -   At least 10 photos that describe the process of assembly
 -   Photos that shows the connection to Raspberry Pi during the assembly
 -   Any ideas to improve the quality of dmcar?
--   Submission: GitHub, and submit the URL of your GitHub to Canvas
+-   Submission: GitHub, and submit the URL of your GitHub
 
 ## Phase 2: Setting-Up Raspberry Pi
 
@@ -95,7 +87,7 @@ DM-Car has 3 PCB as below:
     and 2 servos for pan and tilt of a camera
 -   TB6612 Motor Driver: controlling 2 servos for back wheels
 
-In this project, we are going to use Raspberry Pi 3 model B+ to control
+In this project, we are going to use Raspberry Pi 4 to control
 servos using Python. Due to the limited time, an instructor will provide
 pre-configured raspbian OS image. Please, follow the instructions below
 to setup Raspberry Pi.
@@ -116,7 +108,24 @@ Note that if an instructor provides pre-configured SD Card, move to Step
     -   wpa\_supplicant.conf: edit contents for proper wifi info.
         Otherwise, you can download 2 files from class Github
 
-**Step 3**: Connect to Raspberry Pi using VNC viewer
+**Step 3**: Connect to Raspberry Pi using USB Serial Cable
+If you know IP address of your Raspberry Pi, skip Step 3. Then, move to Step 4. This step is for setting-up wi-fi on your Raspberry Pi first time.
+For more information about the connection to Rapsberry Pi using USB Serial Cable, you can refer the following slide at http://bit.ly/DMCAR4 
+
+-   [Step 1] Enable Serial Console
+-   [Step 2] Installation Software
+    -   MacOS
+    -   Windows
+-   [Step 3] Connect Console Cable
+    -   Connect to Raspberry Pi
+    -   Connect to Auto-Car controller
+-   [Step 4] Connect to RPi
+    -   From MacOS
+    -   From Windows
+-   [Step 5] Wi-Fi Setup
+-   [Step 6] Check IP address
+
+**Step 4**: Connect to Raspberry Pi using VNC viewer
 For more information about the connection to Rapsberry Pi, you can refer the following slide at http://bit.ly/DMCAR3 
 
 -   ***Option 1***: directly setup wi-fi using a mice, a keyboard and a
@@ -159,7 +168,7 @@ For more information about the connection to Rapsberry Pi, you can refer the fol
     -   Then either tap or click to connect to your Raspberry Pi
     ![](Images/image5.jpg)
 
--   ***Option 4***: Hotspot for Raspberry Pi
+-   ***Option 4***: Hotspot for Raspberry Pi (Do Not use this option unless you are really familier with Raspberry Pi)
     -   Use this option if you want to use your Raspberry Pi as a hotspot without internet
     -   Start Terminal
     -   Run the following commands in a terminal
@@ -177,9 +186,9 @@ For more information about the connection to Rapsberry Pi, you can refer the fol
        -   For example, sudo ./install-hotspot.sh dmLee 8
 -   Reboot.
 
-**Step 4**: Setup networks if needed
+**Step 5**: Setup networks if needed
 
-**Step 5**: Update raspbian OS using terminal
+**Step 6**: Update raspbian OS using terminal
 
     $ sudo apt-get update
     $ sudo apt-get upgrade
@@ -190,15 +199,23 @@ For more information about the connection to Rapsberry Pi, you can refer the fol
 
 ## Phase 3: Download Programs and Configuration
 In order to focus on main goal of the project, i.e., applying a deep
-learning algorithm into an autonomous vehicle, an instructor provides a
+learning algorithms into an autonomous vehicle, an instructor provides a
 package of programs and libraries for an autonomous vehicle. DM-Car has
 the following functionalities:
--   Straight lane detection
+-   Lane detection both straight and curve lanes
 -   Controlling back wheel servos
 -   Controlling front steering wheel servo
--   Camera module
--   PID control
+-   Camera module (OpenCV)
+-   PID control (Optional)
 -   Creating Video Clip
+-   Sequence of Image Files for dataset
+-   Deep Learning Models for Autonomous Car
+    -   Stop Not-Stop Model: CNN LeNet model
+    -   Lane Follower Model: Nvidia CNN model
+    -   Stop Not-Stop Image Classification Model: "Stop No-Stop model" by Retrain a classification model for Edge TPU using post-training quantization (with TF2)
+       -   Google Colab: https://colab.research.google.com/drive/1s-1x8KnNcI5fphLC_yqo7BxsoSWow-1i   
+    -   Traffic Sign Object Detection Model: "Traffic Sign Model" by Retrain EfficientDet for the Edge TPU with TensorFlow Lite Model Maker (with TF2)
+       -   Google Colab: https://colab.research.google.com/drive/1TXbcYvZ4TAkbzwqfQ_4KVvp4z51HztDO
 
 Apply calibration values to DM-Car program either editing or copying config file.
 
@@ -209,30 +226,59 @@ OR
 
 Download the autonomous vehicle DM-Car program from Github site. First,
 login Raspberry Pi using VNC viewer (or ssh).
-
+    ```
     $ wget https://github.com/jaykay0408/Auto-Car-Data-Mining/raw/master/dmcar-student.tar
     $ tar xvf dmcar-student.tar
-
+    ```
 Start virtualenv (name 'picar3')
-
-    $ . ./.profile
+    ```
     $ workon picar3
     $ dmcar-student
-
+    ```
 dmcar-student consist of the following files and directory:
 
 ![](Images/image6.jpg)
 
 -   dmcar.py
-    1.  main file to control autonomous car
+    1.  main file to control autonomous car with Stop detector
     2.  To run the program
     ```
-    $ python dmcar.py -b 5
+    $ python dmcar.py -b 4
     ```
-    3.  You need to handle mainly this file to operate DM-Car
+    3.  MODEL: stop_not_stop.model
+    4.  You need to handle mainly this file to operate DM-Car
+-   dmcar_lane.py
+    1.  main file to control autonomous car (lane only)
+    2.  To run the program
+    ```
+    $ python dmcar_lane.py -b 4
+    ```
+    3.  No model is needed
+-   dmcar_model.py
+    1.  lane follower using NVIDIA CNN model
+    2.  To run the program
+    ```
+    $ python dmcar_model.py -b 4 -m [model_name]
+    ```
+    3.  MODEL: lane_navigation.model
+-   dmcar_coral.py
+    1.  Stop NoStop model using pre-trained MobileNet V2
+    2.  To run the program
+    ```
+    $ python dmcar_coral.py -b 4
+    ```
+    3.  MODEL: stop_not_stop.tflite
+    4.  LABEL: stop_not_stop.txt
+-   dmcar_coco.py
+    1.  Traffic Sign model using EfficientDet object detection
+    2.  To run the program
+    ```
+    $ python dmcar_coco.py -b 4
+    ```
+    3.  MODEL: traffic_sign.tflite
+    4.  LABEL: traffic_sign.txt
 -   lane\_detection.py
-    1.  functions to detect lanes and PID control
-    2.  Line 187: vertices can be modified
+    1.  functions to detect lanes and helper functions:
 -   Line.py
     1.  Line class
 -   stop\_detector.py
@@ -268,6 +314,16 @@ dmcar-student consist of the following files and directory:
 -   picar
     1. directory for servos (2 back wheels and 1 front wheels) in a car
         mostly doesn\'t have to change
+-   model_stop_not_stop
+    1. directory for building stop_not_stop.model for dmcar.py
+-   model_traffic_sign
+    1. directory for building dataset of traffic sign using Colab
+    2. dmcar_coco.py
+-   model_lane_follow 
+    1. directory for building dataset of lane follower
+    2. dmcar_model.py
+-   models
+    1. directory to keep created models
 
 ***Homework: Submit the followings:***
 -   How to improve the lane detection
@@ -275,30 +331,75 @@ dmcar-student consist of the following files and directory:
     (i.e., servos)
 -   Create a video clip that captures moving car following lane
 
-## Phase 4: Creating Training Model for Traffic Signs using CNN
-
-To create training model for traffic signs using CNN, use the Exercise
-Lab: Section 5.
-
-Transfer the trained model from your PC into Raspberry Pi in your car
-using VNC viewer.
--   Start VNC viewer file transfer
--   Copy the file into /home/pi/dmcar-student
+## Phase 4-1: Creating Training Model for Traffic Signs using CNN (LeNet) 
+To create training model for traffic signs using CNN (LeNet), use the Exercise
+Lab: Section 5. However, you can use the same Exercise Lab on your Raspberry Pi. Don't forget to start "picar3" virtual environment using "workon picar3".
+-   Start Terminal, picar3 virtual environment, and go to a directory
+    ```
+    $ workon picar3
+    (picar3) $ cd dmcar-student/model_stop_not_stop
+    ```
+-   Create a dataset by following the Exercise Lab under images directory
+    ```
+    (picar3) $ python download_images.py --urls urls.txt --output images/stop
+    ``` 
+-   Run training
+    ```
+    (picar3) $ python train_network.py --dataset images --model stop_not_stop.model
+    ```
+-   Move a created model to models directory
+    ```
+    (picar3) $ mv stop_not_stop.model ../models/
+    ```
 -   If model name is different from "stop\_not\_stop.model", change
     MODEL\_PATH at dmcar.py
-```
-# define the paths to the Stop/Non-Stop Keras deep learning model
-MODEL_PATH = "stop_not_stop.model"
-```
--   If you don't have a trained model, you can use a default model
-    "stop\_not\_stop.model" by downloading from class GitHub
-```
-    $ wget https://github.com/jaykay0408/Auto-Car-Data-Mining/raw/master/stop_not_stop.model
-```
+    ```
+    # define the paths to the Stop/Non-Stop Keras deep learning model
+    MODEL_PATH = "./models/stop_not_stop.model"
+    ```
+-   Run dmcar.py file to test the model
+    ```
+    (picar3) $ dmcar.py -b 4
+    ```
+
+## Phase 4-2: Creating Training Model for Traffic Signs using Google Colab (MobileNet V2 classifier for the Edge TPU)
+To create training model for traffic signs, use Colab for MobileNet V2 classifier for the Edge TPU. You can use the same dataset created in Phase 4-1.
+-   Start Terminal, picar3 virtual environment, and go to a directory
+    ```
+    $ workon picar3
+    (picar3) $ cd dmcar-student/model_stop_not_stop
+    ```
+-   Create a dataset (image) for Google Colab
+    ```
+    (picar3) $ tar cvzf stop_nostop.tgz images
+    ```
+-   Upload stop_nostop.tgz file to Google Drive "data" folder. 
+    -   If you do not have "data" folder, you need to creat it first
+-   On Rapsberry Pi, start Web Browser (click circle shape earth on top menu bar)
+-   Goto Google Colab : https://colab.research.google.com/drive/1s-1x8KnNcI5fphLC_yqo7BxsoSWow-1i#scrollTo=j4QOy2uA3P_p
+    - You can click a short cut on "Bookmark Bar" (Stop Nostop ...) 
+    - Run cell by cell OR Run All-Cell
+-   When finishing the Colab, model file will be downloaded to your /home/pi/Downloads. Move the downloaded model file to models directory
+    ```
+    (picar3) $ cd ~
+    (picar3) $ mv ./Downloads/stop_not_stop.tflite ./dmcar-student/models
+    (picar3) $ mv ./Downloads/stop_not_stop.txt ./dmcar-student/models
+-   If model name is different from "stop\_not\_stop.model", change
+    MODEL\_PATH and LABEL\_PATH at dmcar_coral.py
+    ```
+    # define the paths to the Stop/Non-Stop Keras learning model
+    MODEL_PATH = "./models/stop_not_stop.tflite"
+    LABEL_PATH = "./models/stop_not_stop.txt"
+    ```
+-   Connect Google Coral USB into USB 3 Port (Bule Color) on your Raspberry Pi
+-   Run dmcar_coral.py file to test the model
+    ```
+    (picar3) $ dmcar_coral.py -b 4
+    ```
 
 ***Homework: Submit the followings:***
 -   Uploading collected dataset into proper storage, such as Google
-    drive or any available shareable storage
+    drive or any available shared storage
 -   Then, share the link of uploaded dataset
 -   Submit python code to train the models
 -   Uploading trained model(s) to Github
@@ -306,7 +407,7 @@ MODEL_PATH = "stop_not_stop.model"
     1. Image Size
     2. How to design CNN architecture including how many layers, what
         kind of layers, and so on
-    3. How to optimize the model including parameter values, drop out,
+    3. How to optimize the model including parameter values, image augumentation, drop out,
         backpropagation, learning rate, \# of epoch and so on
     4. Evaluations
     5. How to overcome the limitations in your DM-Car implementation
@@ -320,8 +421,8 @@ model in Phase 4 for the following task.
 
 Specification of Testing road
 -   Dimensions:
-    -   Width: 8 \~ 10 inches (but, 9 inch is suggested)
-    -   Length: minimum 10 feet (but, only straight lane)
+    -   Width: 8 \~ 9 inches (but, 8 inch is suggested)
+    -   Length: minimum 10 feet (mix straight line and curve line)
     -   Surface: any flat area is fine
     -   Color of surface: any color is fine, but not too dark. Also,
         solid and bright color will give the best performance
@@ -382,8 +483,8 @@ Your picar should follow the tasks below:
 
 ## Phase 6: Final Competition
 The final phase of this project is a competition with other teams.
--   When: May 6 \~ May 10 during the final exam week
--   Where: Hallway in Technology Building
+-   When: TBA
+-   Where: TBA
 -   Rule:
     1.  Each team has 2 trials
     2.  A team who gets the highest point is a winner
@@ -408,7 +509,7 @@ The final phase of this project is a competition with other teams.
 -   3rd Place: Group 2 and Group 3 (total 170 points)
 -   5th Place: Group 5 (total 0 point)
 
-***Competition Score Board***
+***Competition Score Board (Spring 2019 at Bridgeport, CT) ***
 ![](Images/image9.jpg)
 
 Group 1: 
