@@ -332,7 +332,23 @@ dmcar-student consist of the following files and directory:
     (i.e., servos)
 -   Create a video clip that captures moving car following lane
 
-## Phase 4-1: Creating Training Model for Traffic Signs using CNN (LeNet) 
+## Phase 4: Lane Follower for Autonomous Car
+
+## Phase 5: Creating Models for Traffic Signs
+In this phase, you are going to create Deep Learning model to classify or detect traffic signs (starting from "Stop Sign", then extend to other traffic signs including "Speed", "Traffic Signal", and others.
+To create Deep Learning model, there are 4 main methods as below:
+1.  On-device
+2.  Google Colab
+3.  Cloud Service (GCP, AWS or Azure)
+4.  Docker
+
+In this project, we are going to use either 1. or 2. method. However, you can try 3. and 4. later. There are 4 different models in this phase (mostly based on Convolutional Neural Network as a basic Deep Learning architecture).
+-   Model 1: Training Model for Stop Signs using CNN (LeNet)
+-   Model 2: Re-Training Model for Stop Signs using Google Colab (MobileNet V2 classifier for the Edge TPU)
+-   Model 3: Pre-trained Object Detection Model for Edge TPU (SSD MobileNet V2 trained on COCO)
+-   Model 4: Re-Training Model for Traffic Signs using Google Colab (EfficientDet-Lite detector for the Edge TPU)
+
+### Model 1: Creating Training Model for Traffic Signs using CNN (LeNet) 
 To create training model for traffic signs using CNN (LeNet), use the Exercise
 Lab: Section 5. However, you can use the same Exercise Lab on your Raspberry Pi. Don't forget to start "picar3" virtual environment using "workon picar3".
 -   Start Terminal, picar3 virtual environment, and go to a directory
@@ -363,7 +379,7 @@ Lab: Section 5. However, you can use the same Exercise Lab on your Raspberry Pi.
     (picar3) $ dmcar.py -b 4
     ```
 
-## Phase 4-2: Creating Training Model for Traffic Signs using Google Colab (MobileNet V2 classifier for the Edge TPU)
+### Model 2: Creating Training Model for Traffic Signs using Google Colab (MobileNet V2 classifier for the Edge TPU)
 To create training model for traffic signs, use Colab for MobileNet V2 classifier for the Edge TPU. You can use the same dataset created in Phase 4-1.
 -   Start Terminal, picar3 virtual environment, and go to a directory
     ```
