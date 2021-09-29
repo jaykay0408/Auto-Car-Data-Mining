@@ -414,7 +414,6 @@ To create training model for traffic signs, use Colab for MobileNet V2 classifie
     (picar3) $ dmcar_coral.py -b 4
     ```
 
-
 ### Model 3: Pre-trained Object Detection Model for Edge TPU (SSD MobileNet V2 trained on COCO)
 In this model, a car uses a pre-trained object detection model for Edge TPU, called SSD MobileNet V2 which is trained on COCO dataset. You can find more pre-trained object detection models at [Coral website](https://coral.ai/models/object-detection/).
 
@@ -430,6 +429,56 @@ In order to use a pre-trained model, you need to download pre-trained model and 
     ```
     MODEL_PATH = "./models/coco_model.tflite"    # General CoCo Model
     LABEL_PATH = "./models/coco_labels.txt"      # CoCo Model Label
+    ```
+-   Connect Google Coral USB into USB 3 Port (Bule Color) on your Raspberry Pi
+-   Run dmcar_coral.py file to test the model
+    ```
+    (picar3) $ dmcar_coco.py -b 4
+    ```
+
+### Model 4: Re-Training Model for Traffic Signs using Google Colab (EfficientDet-Lite detector for the Edge TPU)
+To create re-training model for traffic signs, use Colab for EfficientDet-Lite detector for the Edge TPU. You need to create a dataset of traffic signs where each object is labeled with CSV format.
+-   First, taking at least 40 photos using a cell phone or PiCar. Each photo should have several traffic signs including stop, traffic signal, speed25, speed50, yield, rail road and person. You can setup variety of situation to take a photo, such as distance, tilt and different shapes. To use a USB camera mounted on PiCar, you can use the following command or create python script with OpenCV library.
+    ```
+    $ raspistill -o image.jpg
+    ```
+-   After taking photos, move all image files to a directory below. Start Terminal, picar3 virtual environment, and go to a directory
+    ```
+    $ workon picar3
+    (picar3) $ cd ~/dmcar-student/model_traffic_sign/data
+    # Copy all files to here
+    ```
+-   Label all objects (i.e., traffic sign) using labelImg python tool
+    ```
+    (picar3) $ cd ~/labelImg
+    (picar3) $ python labelImg.py
+    # Open directory (i.e., ~/dmcar-student/model_traffic_sign/data), then perform labeling
+    ```
+-   After labeling all images, create a dataset (data) for Google Colab
+    ```
+    (picar3) $ cd ~/dmcar-student/model_traffic_sign/
+    (picar3) $ python xml_to_csv.py -d data
+    (picar3) $ cat ./data/traffic_labels.csv'.csv
+    # Check if csv file is created successfully
+    (picar3) $ tar cvzf data.tgz data
+    ```
+-   Upload data.tgz file to Google Drive "data" folder. 
+    -   If you do not have "data" folder, you need to creat it first
+-   On Rapsberry Pi, start Web Browser (click circle shape earth on top menu bar)
+-   [Goto Google Colab 2](https://colab.research.google.com/drive/1TXbcYvZ4TAkbzwqfQ_4KVvp4z51HztDO)
+    - You can click a short cut on "Bookmark Bar" (Traffic Sign ...) 
+    - Run cell by cell OR Run All-Cell
+-   When finishing the Colab, model file will be downloaded to your /home/pi/Downloads. Move the downloaded model file to models directory
+    ```
+    (picar3) $ cd ~
+    (picar3) $ mv ./Downloads/traffic_sign_edgetpu.tflite ./dmcar-student/models
+    (picar3) $ mv ./Downloads/traffic_sign.tflite ./dmcar-student/models
+    (picar3) $ mv ./Downloads/traffic_sign.txt ./dmcar-student/models
+-   You can use either traffic_sign_edgetpu.tflite or traffic_sign.tflite. edgetpu.tflite is move efficient and less power comsumption. If model name is different, change MODEL\_PATH and LABEL\_PATH at dmcar_coco.py
+    ```
+    # define the paths to the Stop/Non-Stop Keras learning model
+    MODEL_PATH = "./models/traffic_sign_edgetpu.tflite"
+    LABEL_PATH = "./models/traffic_sign.txt"
     ```
 -   Connect Google Coral USB into USB 3 Port (Bule Color) on your Raspberry Pi
 -   Run dmcar_coral.py file to test the model
