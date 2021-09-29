@@ -377,7 +377,7 @@ To create training model for traffic signs, use Colab for MobileNet V2 classifie
 -   Upload stop_nostop.tgz file to Google Drive "data" folder. 
     -   If you do not have "data" folder, you need to creat it first
 -   On Rapsberry Pi, start Web Browser (click circle shape earth on top menu bar)
--   Goto Google Colab : https://colab.research.google.com/drive/1s-1x8KnNcI5fphLC_yqo7BxsoSWow-1i#scrollTo=j4QOy2uA3P_p
+-   [Goto Google Colab 1](https://colab.research.google.com/drive/1s-1x8KnNcI5fphLC_yqo7BxsoSWow-1i#scrollTo=j4QOy2uA3P_p)
     - You can click a short cut on "Bookmark Bar" (Stop Nostop ...) 
     - Run cell by cell OR Run All-Cell
 -   When finishing the Colab, model file will be downloaded to your /home/pi/Downloads. Move the downloaded model file to models directory
