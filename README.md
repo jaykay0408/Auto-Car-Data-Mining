@@ -214,28 +214,28 @@ the following functionalities:
     -   Stop Not-Stop Model: CNN LeNet model
     -   Lane Follower Model: Nvidia CNN model
     -   Stop Not-Stop Image Classification Model: "Stop No-Stop model" by Retrain a classification model for Edge TPU using post-training quantization (with TF2)
-       -   Google Colab: https://colab.research.google.com/drive/1s-1x8KnNcI5fphLC_yqo7BxsoSWow-1i   
+       -   [Google Colab 1](https://colab.research.google.com/drive/1s-1x8KnNcI5fphLC_yqo7BxsoSWow-1i)   
     -   Traffic Sign Object Detection Model: "Traffic Sign Model" by Retrain EfficientDet for the Edge TPU with TensorFlow Lite Model Maker (with TF2)
-       -   Google Colab: https://colab.research.google.com/drive/1TXbcYvZ4TAkbzwqfQ_4KVvp4z51HztDO
+       -   [Google Colab 2](https://colab.research.google.com/drive/1TXbcYvZ4TAkbzwqfQ_4KVvp4z51HztDO)
 
 Apply calibration values to DM-Car program either editing or copying config file.
 
     $ cp /home/pi/SunFounder_PiCar-V/remote_control/remote_control/driver/config /home/pi/dmcar-student/picar/config
+
 OR
 	Edit /home/pi/dmcar-student/picar/config file with the calibration values from Phase 1.
 
-
 Download the autonomous vehicle DM-Car program from Github site. First,
 login Raspberry Pi using VNC viewer (or ssh).
-    ```
+ 
     $ wget https://github.com/jaykay0408/Auto-Car-Data-Mining/raw/master/dmcar-student.tar
     $ tar xvf dmcar-student.tar
-    ```
+
 Start virtualenv (name 'picar3')
-    ```
+
     $ workon picar3
     $ dmcar-student
-    ```
+
 dmcar-student consist of the following files and directory:
 
 ![](Images/image6.jpg)
@@ -380,7 +380,7 @@ Lab: Section 5. However, you can use the same Exercise Lab on your Raspberry Pi.
     ```
 
 ### Model 2: Creating Training Model for Traffic Signs using Google Colab (MobileNet V2 classifier for the Edge TPU)
-To create training model for traffic signs, use Colab for MobileNet V2 classifier for the Edge TPU. You can use the same dataset created in Phase 4-1.
+To create training model for traffic signs, use Colab for MobileNet V2 classifier for the Edge TPU. You can use the same dataset created in Model 1.
 -   Start Terminal, picar3 virtual environment, and go to a directory
     ```
     $ workon picar3
@@ -413,6 +413,30 @@ To create training model for traffic signs, use Colab for MobileNet V2 classifie
     ```
     (picar3) $ dmcar_coral.py -b 4
     ```
+
+
+### Model 3: Pre-trained Object Detection Model for Edge TPU (SSD MobileNet V2 trained on COCO)
+In this model, a car uses a pre-trained object detection model for Edge TPU, called SSD MobileNet V2 which is trained on COCO dataset. You can find more pre-trained object detection models at [Coral website](https://coral.ai/models/object-detection/).
+
+In order to use a pre-trained model, you need to download pre-trained model and its label file.
+-   Start Terminal, picar3 virtual environment, and go to models directory
+    ```
+    $ workon picar3
+    (picar3) $ wget https://github.com/jaykay0408/Auto-Car-Data-Mining/raw/master/coco_model.tflite
+    (picar3) $ wget https://github.com/jaykay0408/Auto-Car-Data-Mining/raw/master/coco_labels.txt    
+    ```
+-   If model name or label file name is different, change
+    MODEL\_PATH and LABEL\_PATH at dmcar_coco.py
+    ```
+    MODEL_PATH = "./models/coco_model.tflite"    # General CoCo Model
+    LABEL_PATH = "./models/coco_labels.txt"      # CoCo Model Label
+    ```
+-   Connect Google Coral USB into USB 3 Port (Bule Color) on your Raspberry Pi
+-   Run dmcar_coral.py file to test the model
+    ```
+    (picar3) $ dmcar_coco.py -b 4
+    ```
+
 
 ***Homework: Submit the followings:***
 -   Uploading collected dataset into proper storage, such as Google
