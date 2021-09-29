@@ -354,37 +354,30 @@ You will use a popular, open-source computer vision package, called OpenCV, to h
     -   "-f", "--file": ath for the training file header, e.g., -f out_file. Files will be stored at ~/dmcar_student/model_lane_follow/train_data
 
 ### Method 2: Lane follwer using Deep Learning model (i.e., NVIDIA CNN model)
-To create training model for traffic signs using CNN (LeNet), use the Exercise
-Lab: Section 5. However, you can use the same Exercise Lab on your Raspberry Pi. Don't forget to start "picar3" virtual environment using "workon picar3".
+You will use a deep learning approach to make our picar follow lane autonomously. For the training model, Nvidia CNN model is used in this method. The inputs to the Nvidia model are video images from a camera mounted on a car, and outputs are the steering angle of the car. At the core of the NVidia model, there is a Convolutional Neural Network. Start "picar3" virtual environment using "workon picar3".
 -   Start Terminal, picar3 virtual environment, and go to a directory
     ```
     $ workon picar3
-    (picar3) $ cd dmcar-student/model_stop_not_stop
+    (picar3) $ cd dmcar-student/
     ```
--   Create a dataset by following the Exercise Lab under images directory
+-   Create a dataset by driving pycar 
     ```
-    (picar3) $ python download_images.py --urls urls.txt --output images/stop
+    (picar3) $ python dmcar.py -b 4 -f data
+    # Check if training files are created successfully at ~/dmcar_student/model_lane_follow/train_data
     ``` 
--   Run training
+-   Run training. This will take 2 ~ 3 hours depending on size of dataset
     ```
-    (picar3) $ python train_network.py --dataset images --model stop_not_stop.model
+    (picar3) $ cd ~/dmcar-student/model_lane_follow 
+    (picar3) $ python train_lane_model.py
     ```
 -   Move a created model to models directory
     ```
-    (picar3) $ mv stop_not_stop.model ../models/
+    (picar3) $ cp ./model_lane_follow/train_model/lane_navigation_check.h5 ~/dmcar-student/models/lane.model
     ```
--   If model name is different from "stop\_not\_stop.model", change
-    MODEL\_PATH at dmcar.py
+-   Run dmcar_model.py file to test the model
     ```
-    # define the paths to the Stop/Non-Stop Keras deep learning model
-    MODEL_PATH = "./models/stop_not_stop.model"
+    (picar3) $ dmcar.py -b 4 -m lane.model
     ```
--   Run dmcar.py file to test the model
-    ```
-    (picar3) $ dmcar.py -b 4
-    ```
-
-
 
 ## Phase 5: Creating Models for Traffic Signs
 In this phase, you are going to create Deep Learning model to classify or detect traffic signs (starting from "Stop Sign", then extend to other traffic signs including "Speed", "Traffic Signal", and others.
