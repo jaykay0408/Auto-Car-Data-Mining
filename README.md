@@ -333,6 +333,58 @@ dmcar-student consist of the following files and directory:
 -   Create a video clip that captures moving car following lane
 
 ## Phase 4: Lane Follower for Autonomous Car
+In this phase, you are going to make picar follow lanes, a.k.a lane follower. There are 2 methods as below:
+-   Method 1: Lane follwer using OpenCV
+-   Method 2: Lane follwer using Deep Learning model (i.e., NVIDIA CNN model)
+
+### Method 1: Lane follwer using OpenCV 
+You will use a popular, open-source computer vision package, called OpenCV, to help picar autonomously navigate within a lane. 
+-   Start Terminal, picar3 virtual environment, and go to a directory
+    ```
+    $ workon picar3
+    (picar3) $ cd dmcar-student
+    ```
+-   Run dmcar.py file to test the model
+    ```
+    (picar3) $ dmcar.py -b 4
+    ```
+-   There are several options you can try:
+    -   "-v", "--video": path to the output video clip header, e.g., -v out_video
+    -   "-b", "--buffer": max buffer size, default=5
+    -   "-f", "--file": ath for the training file header, e.g., -f out_file. Files will be stored at ~/dmcar_student/model_lane_follow/train_data
+
+### Method 2: Lane follwer using Deep Learning model (i.e., NVIDIA CNN model)
+To create training model for traffic signs using CNN (LeNet), use the Exercise
+Lab: Section 5. However, you can use the same Exercise Lab on your Raspberry Pi. Don't forget to start "picar3" virtual environment using "workon picar3".
+-   Start Terminal, picar3 virtual environment, and go to a directory
+    ```
+    $ workon picar3
+    (picar3) $ cd dmcar-student/model_stop_not_stop
+    ```
+-   Create a dataset by following the Exercise Lab under images directory
+    ```
+    (picar3) $ python download_images.py --urls urls.txt --output images/stop
+    ``` 
+-   Run training
+    ```
+    (picar3) $ python train_network.py --dataset images --model stop_not_stop.model
+    ```
+-   Move a created model to models directory
+    ```
+    (picar3) $ mv stop_not_stop.model ../models/
+    ```
+-   If model name is different from "stop\_not\_stop.model", change
+    MODEL\_PATH at dmcar.py
+    ```
+    # define the paths to the Stop/Non-Stop Keras deep learning model
+    MODEL_PATH = "./models/stop_not_stop.model"
+    ```
+-   Run dmcar.py file to test the model
+    ```
+    (picar3) $ dmcar.py -b 4
+    ```
+
+
 
 ## Phase 5: Creating Models for Traffic Signs
 In this phase, you are going to create Deep Learning model to classify or detect traffic signs (starting from "Stop Sign", then extend to other traffic signs including "Speed", "Traffic Signal", and others.
@@ -502,10 +554,9 @@ To create re-training model for traffic signs, use Colab for EfficientDet-Lite d
     4. Evaluations
     5. How to overcome the limitations in your DM-Car implementation
 
-## Phase 5: Testing Autonomous Vehicle with Pre-Trained Model
+## Phase 6: Testing Autonomous Vehicle with Pre-Trained Model
 
-In Phase 5 (for the last step), picar will be tested using pre-trained
-model in Phase 4 for the following task.
+In Phase 6 (for the last step), picar will be tested using re-trained model in Model 4 of Phase 5 for the following task.
 
 ![](Images/image7.png)
 
@@ -529,6 +580,7 @@ Specification of Testing road
         -   High SPEED: change speed to high
         -   Traffic Signal: detect traffic signal (no change on picar)
         -   RR (Rail Road): stop and go
+        -   Person will be put suddenly: stop until a person is removed
     -   Dimensions
         -   Total Hight: 3 \~ 5 inches
         -   Sign: 1 x 1 inches
@@ -550,6 +602,7 @@ Your picar should follow the tasks below:
     -   High SPEED: change speed to high
     -   Traffic Signal: detect traffic signal (no change on picar)
     -   RR (Rail Road): stop and go
+    -   Person: stop until removed
 5.  Stop at the end of road
 
 ***Homework: Submit the followings***
@@ -571,7 +624,7 @@ Your picar should follow the tasks below:
     -   Submit screenshots and short clips that shows your
         implementation and progress to Canvas
 
-## Phase 6: Final Competition
+## Phase 7: Final Competition
 The final phase of this project is a competition with other teams.
 -   When: TBA
 -   Where: TBA
@@ -618,7 +671,7 @@ Group 5:
 [![Alt text](https://img.youtube.com/vi/Z6RLtIVF4qU/0.jpg)](https://www.youtube.com/watch?v=Z6RLtIVF4qU)
 
 
-## Phase 7: Final Writing-Up
+## Phase 8: Final Writing-Up
 You must use Github for your documentation
 -   Due: Before the final competition day
 -   Also, submit 5 minutes final video or Youtube link
