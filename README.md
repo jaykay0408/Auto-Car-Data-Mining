@@ -339,7 +339,7 @@ In this phase, you are going to make picar follow lanes, a.k.a lane follower. Th
 -   Method 2: Lane follwer using Deep Learning model (i.e., NVIDIA CNN model)
 
 ### Method 1: Lane follwer using OpenCV 
-You will use a popular, open-source computer vision package, called OpenCV, to help picar autonomously navigate within a lane. 
+You will use a popular, open-source computer vision package, called OpenCV, to help picar autonomously navigate within a lane.
 -   Start Terminal, picar3 virtual environment, and go to a directory
     ```
     $ workon picar3
@@ -347,7 +347,7 @@ You will use a popular, open-source computer vision package, called OpenCV, to h
     ```
 -   Run dmcar.py file to test the model
     ```
-    (picar3) $ dmcar.py -b 4
+    (picar3) $ dmcar_lane.py -b 4
     ```
 -   There are several options you can try:
     -   "-v", "--video": path to the output video clip header, e.g., -v out_video
